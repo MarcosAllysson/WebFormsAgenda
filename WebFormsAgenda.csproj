@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DatabaseAgenda.mdf" />
+    <Content Include="App_Data\DatabaseAgenda_log.ldf">
+      <DependentUpon>DatabaseAgenda.mdf</DependentUpon>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
