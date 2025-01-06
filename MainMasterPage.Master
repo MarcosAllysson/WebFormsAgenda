@@ -33,6 +33,18 @@
 
         <main>
             <div>
+                <%--No ASP.NET Web Forms, o <asp:ContentPlaceHolder> é um controle especial usado em uma Master Page 
+                    para definir áreas onde o conteúdo das páginas de conteúdo (como o index.aspx) será inserido. 
+                    Ele age como um "marcador de posição" que será substituído pelo conteúdo específico da página 
+                    de conteúdo.
+                --%>
+
+
+                <%--Aqui, o <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"> define uma área onde o 
+                    conteúdo das páginas que usam essa Master Page será inserido. Isso permite que você tenha um layout 
+                    consistente (como cabeçalhos, rodapés e barras de navegação) em todas as páginas, enquanto o conteúdo 
+                    específico de cada página é inserido onde o ContentPlaceHolder está localizado.
+                --%>
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>

@@ -1,0 +1,20 @@
+﻿ContentPlaceHolder
+	No ASP.NET Web Forms, o <asp:ContentPlaceHolder> é um controle especial usado em uma Master Page 
+    para definir áreas onde o conteúdo das páginas de conteúdo (como o index.aspx) será inserido. 
+    Ele age como um "marcador de posição" que será substituído pelo conteúdo específico da página 
+    de conteúdo.
+
+
+
+ContentPlaceHolder é pro ASP.NET Web Forms o que o router-link é pro angular?
+	Não exatamente. O `<asp:ContentPlaceHolder>` no ASP.NET Web Forms e o `<router-link>` no Angular têm propósitos diferentes.
+
+	### `<asp:ContentPlaceHolder>` no ASP.NET Web Forms
+	- Propósito: Define áreas em uma Master Page onde o conteúdo das páginas de conteúdo será inserido.
+	- Uso: Permite que diferentes páginas compartilhem um layout comum, mas tenham conteúdo específico em áreas definidas.
+
+	### `<router-link>` no Angular
+	- Propósito: Cria links de navegação que permitem a navegação entre diferentes rotas em uma aplicação Angular.
+	- Uso: Facilita a navegação entre diferentes componentes ou páginas dentro de uma aplicação Angular de uma única página (SPA).
+
+	Então, enquanto o `<asp:ContentPlaceHolder>` é usado para definir áreas de conteúdo dinâmico em uma Master Page, o `<router-link>` é usado para navegação entre diferentes rotas em uma aplicação Angular. Ambos são importantes em seus respectivos frameworks, mas servem a propósitos diferentes.
