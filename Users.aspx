@@ -149,7 +149,7 @@
     InsertCommand="INSERT INTO [User] ([Email], [Name], [Password]) VALUES (@Email, @Name, @Password)" 
     ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" 
     SelectCommand="SELECT * FROM [User]" 
-    UpdateCommand="UPDATE [User] SET [Name] = @Name, [Password] = @Password WHERE [Email] = @Email">
+    UpdateCommand="UPDATE [User] SET [Name] = @Name, [Password] = @Password WHERE [Email] = @Email" OnInserted="SqlDataSourceUsers_Inserted" OnUpdated="SqlDataSourceUsers_Updated">
 
     <DeleteParameters>
         <asp:Parameter Name="Email" Type="String" />
@@ -167,4 +167,6 @@
         <asp:Parameter Name="Email" Type="String" />
     </UpdateParameters>
 </asp:SqlDataSource>
+    <br />
+    <asp:Label ID="LMessage" runat="server" Font-Bold="True" Font-Size="Large"></asp:Label>
 </asp:Content>
