@@ -71,6 +71,7 @@
     <Content Include="App_Data\DatabaseAgenda_log.ldf">
       <DependentUpon>DatabaseAgenda.mdf</DependentUpon>
     </Content>
+    <Content Include="Content Explication.txt" />
     <Content Include="Images\agenda.png" />
     <Content Include="Index.aspx" />
     <Content Include="Web.config" />
