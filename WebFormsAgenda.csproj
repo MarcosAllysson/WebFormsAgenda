@@ -71,6 +71,7 @@
     <Content Include="App_Data\DatabaseAgenda_log.ldf">
       <DependentUpon>DatabaseAgenda.mdf</DependentUpon>
     </Content>
+    <Content Include="Contacts.aspx" />
     <Content Include="Content Explication.txt" />
     <Content Include="Images\agenda.png" />
     <Content Include="Index.aspx" />
@@ -78,6 +79,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
