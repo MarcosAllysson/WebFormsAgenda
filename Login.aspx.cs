@@ -51,7 +51,7 @@ namespace WebFormsAgenda
             else
             {
                 // direct to main page
-                labelResponse.Text = "It works!";
+                Response.Redirect("~/Index.aspx");
             }
         }
     }
