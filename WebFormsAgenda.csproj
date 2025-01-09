@@ -73,6 +73,7 @@
     </Content>
     <Content Include="Contacts.aspx" />
     <Content Include="Content Explication.txt" />
+    <Content Include="Content\style.css" />
     <Content Include="Images\agenda.png" />
     <Content Include="Index.aspx" />
     <Content Include="Users.aspx" />
