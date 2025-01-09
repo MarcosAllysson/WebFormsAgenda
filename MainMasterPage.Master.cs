@@ -11,7 +11,11 @@ namespace WebFormsAgenda
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            // checking if there's a cookie for the logged user.
+            if (Request.Cookies["login"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
         }
     }
 }

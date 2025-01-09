@@ -11,9 +11,10 @@ namespace WebFormsAgenda
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        private const string loginCookie = "login";
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void buttonLogin_Click(object sender, EventArgs e)
@@ -50,6 +51,13 @@ namespace WebFormsAgenda
             }
             else
             {
+                // adding cookie to make it more secure and check if user if logged or not.
+                HttpCookie cookieEmail = new HttpCookie(loginCookie, email);
+                Response.Cookies.Add(cookieEmail);
+
+                //HttpCookie cookiePassword = new HttpCookie("password", password);
+                //Response.Cookies.Add(cookiePassword);
+
                 // direct to main page
                 Response.Redirect("~/Index.aspx");
             }
