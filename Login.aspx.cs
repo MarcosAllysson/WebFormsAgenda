@@ -47,7 +47,10 @@ namespace WebFormsAgenda
 
             if (!reader.HasRows)
             {
-                labelResponse.Text = "Email or password are wrong!";
+                // Using JavaScript to show a message on page.
+                Response.Write("<script> alert('Error: Email or password are wrong!'); </script>");
+
+                //labelResponse.Text = "Email or password are wrong!";
             }
             else
             {

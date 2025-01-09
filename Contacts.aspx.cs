@@ -15,29 +15,52 @@ namespace WebFormsAgenda
         }
         protected void buttonCreate_Click(object sender, EventArgs e)
         {
-            // Get string connection
-            System.Configuration.ConnectionStringSettings connectionString;
+            string name = txtEmail.Text;
+            string email = txtEmail.Text;
+            string phone = txtPhone.Text;
 
-            System.Configuration.Configuration rootWebConfig = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
-            connectionString = rootWebConfig.ConnectionStrings.ConnectionStrings["ConnectionString"];
+            try
+            {
+                if(
+                    !string.IsNullOrEmpty(name) && 
+                    !string.IsNullOrEmpty(email) && 
+                    !string.IsNullOrEmpty(phone)
+                    )
+                { 
+                    // Get string connection
+                    System.Configuration.ConnectionStringSettings connectionString;
 
-            // Create a connection object
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = connectionString.ToString();
+                    System.Configuration.Configuration rootWebConfig = System.Web.Configuration.WebConfigurationManager.OpenWebConfiguration("/MyWebSiteRoot");
+                    connectionString = rootWebConfig.ConnectionStrings.ConnectionStrings["ConnectionString"];
 
-            SqlCommand command = new SqlCommand();
-            command.Connection = connection;
-            command.CommandText = "INSERT INTO Contact (Name,Email,Phone) VALUES (@Name,@Email,@Phone)";
-            command.Parameters.AddWithValue("Name", txtName.Text);
-            command.Parameters.AddWithValue("Email", txtEmail.Text);
-            command.Parameters.AddWithValue("Phone", txtPhone.Text);
+                    // Create a connection object
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = connectionString.ToString();
 
-            connection.Open();
-            command.ExecuteNonQuery();
-            connection.Close();
+                    SqlCommand command = new SqlCommand();
+                    command.Connection = connection;
+                    command.CommandText = "INSERT INTO Contact (Name,Email,Phone) VALUES (@Name,@Email,@Phone)";
+                    command.Parameters.AddWithValue("Name", name);
+                    command.Parameters.AddWithValue("Email", email);
+                    command.Parameters.AddWithValue("Phone", phone);
 
-            // Reload Page
-            ReloadPageAfterInsertingNewContact();
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+
+                    // Reload Page
+                    ReloadPageAfterInsertingNewContact();
+                }
+                else
+                {
+                    throw new Exception("Fill out all fields!");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Using JavaScript to show a message on page.
+                Response.Write("<script> alert('" + ex.Message + "'); </script>");
+            }
         }
 
         protected void ReloadPageAfterInsertingNewContact()
